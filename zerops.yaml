@@ -1,0 +1,8 @@
+# todo upgrade to nodejs@16
+use: [nodejs@14]
+
+run:
+  - npm i
+  - npm run build --prod
+
+deploy: ["build/*"]
