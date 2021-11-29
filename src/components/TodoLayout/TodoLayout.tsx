@@ -11,9 +11,15 @@ interface ITodo {
   complete: boolean,
 }
 
+const initState = [
+  { text: 'Fork repository', complete: false },
+  { text: 'Open build and deploy settings and connect', complete: false },
+  { text: 'Push a new commit', complete: false },
+];
+
 const TodoLayout = () => {
     const [value, setValue] = useState<string>('');
-    const [todos, setTodos] =  useState<ITodo[]>([]);
+    const [todos, setTodos] =  useState<ITodo[]>(initState);
 
     const addTodo = (text:string): void => {
       const newTodos: ITodo[] = [...todos, {text, complete: false}];
